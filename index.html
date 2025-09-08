@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTracker - Construction Progress Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🏗️</div>
+                    <h1 class="logo-text">BuildTracker</h1>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn--outline btn--sm mobile-menu-toggle">
+                        <span class="menu-icon">☰</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-view="dashboard">
+                                📊 Dashboard
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-view="projects">
+                                🏢 Projects
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-view="upload">
+                                📤 Upload Progress
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-view="photos">
+                                📷 Photo Gallery
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-view="workers">
+                                👷 Workers
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Dashboard View -->
+                <div id="dashboard" class="view active">
+                    <div class="view-header">
+                        <h2>Dashboard</h2>
+                        <p class="view-subtitle">Overview of all construction activities</p>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">🏗️</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="activeProjects">3</div>
+                                <div class="stat-label">Active Projects</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">👷</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="workersOnline">3</div>
+                                <div class="stat-label">Workers Online</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📷</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="photosToday">8</div>
+                                <div class="stat-label">Photos Today</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">✅</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="tasksCompleted">15</div>
+                                <div class="stat-label">Tasks Completed</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-section">
+                            <h3>Project Progress</h3>
+                            <div class="progress-list" id="projectProgress"></div>
+                        </div>
+                        
+                        <div class="dashboard-section">
+                            <h3>Recent Updates</h3>
+                            <div class="updates-feed" id="recentUpdates"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects View -->
+                <div id="projects" class="view">
+                    <div class="view-header">
+                        <h2>Projects</h2>
+                        <p class="view-subtitle">Manage and monitor all construction projects</p>
+                    </div>
+                    <div class="projects-grid" id="projectsGrid"></div>
+                </div>
+
+                <!-- Upload View -->
+                <div id="upload" class="view">
+                    <div class="view-header">
+                        <h2>Upload Progress</h2>
+                        <p class="view-subtitle">Submit new work updates and photos</p>
+                    </div>
+                    
+                    <div class="upload-form-container">
+                        <form class="upload-form" id="uploadForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="projectSelect">Project</label>
+                                    <select class="form-control" id="projectSelect" required>
+                                        <option value="">Select a project...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="workTypeSelect">Work Type</label>
+                                    <select class="form-control" id="workTypeSelect" required>
+                                        <option value="">Select work type...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="locationInput">Location</label>
+                                <input type="text" class="form-control" id="locationInput" placeholder="e.g., East Wing, Floor 2" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="descriptionInput">Work Description</label>
+                                <textarea class="form-control" id="descriptionInput" rows="4" placeholder="Describe the work completed and any important notes..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="photoInput">Upload Photo</label>
+                                <input type="file" class="form-control" id="photoInput" accept="image/*">
+                                <div class="photo-preview" id="photoPreview"></div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--lg btn--full-width">
+                                Submit Update
+                            </button>
+                        </form>
+                        
+                        <div class="success-message hidden" id="successMessage">
+                            <div class="success-icon">✅</div>
+                            <h3>Update Submitted Successfully!</h3>
+                            <p>Your progress update has been posted and clients will be notified.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photos View -->
+                <div id="photos" class="view">
+                    <div class="view-header">
+                        <h2>Photo Gallery</h2>
+                        <p class="view-subtitle">Browse all construction photos and updates</p>
+                    </div>
+                    
+                    <div class="gallery-filters">
+                        <select class="form-control filter-select" id="projectFilter">
+                            <option value="">All Projects</option>
+                        </select>
+                        <select class="form-control filter-select" id="workTypeFilter">
+                            <option value="">All Work Types</option>
+                        </select>
+                    </div>
+                    
+                    <div class="photo-gallery" id="photoGallery"></div>
+                </div>
+
+                <!-- Workers View -->
+                <div id="workers" class="view">
+                    <div class="view-header">
+                        <h2>Workers</h2>
+                        <p class="view-subtitle">Team members and their current status</p>
+                    </div>
+                    <div class="workers-grid" id="workersGrid"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Photo Modal -->
+    <div class="modal hidden" id="photoModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
