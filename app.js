@@ -83,7 +83,7 @@ function initNavigation() {
             ) {
                 navLinks.forEach((link) => {
                     link.classList.remove("active");
-                    if (link.getAttribute("href") === `#${section.getAttribute("id")}`) {
+                    if (`#${section.id}` === link.getAttribute("href")) {
                         link.classList.add("active");
                     }
                 });
@@ -93,7 +93,7 @@ function initNavigation() {
     window.addEventListener("scroll", debounce(updateActiveNavLink, 100));
 }
 
-// 2. Video Player Controls (Simplified & Corrected)
+// 2. Video Player Controls
 function initVideoPlayer() {
     const playPauseBtn = document.querySelector(".play-pause-btn");
     const muteBtn = document.querySelector(".mute-btn");
@@ -101,7 +101,6 @@ function initVideoPlayer() {
 
     if (!video) return;
 
-    // Set initial button states based on actual video properties
     playPauseBtn.setAttribute("data-playing", !video.paused);
     muteBtn.setAttribute("data-muted", video.muted);
 
@@ -124,7 +123,6 @@ function initVideoPlayer() {
 function initHeroBackground() {
     const videoBackground = document.querySelector(".video-background");
     if (videoBackground) {
-        // This provides a static image background in case the video fails to load
         videoBackground.style.backgroundImage = `url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1920&h=1080&fit=crop')`;
         videoBackground.style.backgroundPosition = "center";
         videoBackground.style.backgroundSize = "cover";
@@ -141,20 +139,12 @@ function initPerformanceFiltering() {
     filterBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
             const filter = this.getAttribute("data-filter");
-
-            // Update button styles
             filterBtns.forEach((b) => b.classList.remove("active"));
             this.classList.add("active");
-
-            // Show/hide cards
             performanceCards.forEach((card) => {
                 const category = card.getAttribute("data-category");
                 const shouldShow = filter === "all" || category === filter;
-                if (shouldShow) {
-                    card.classList.remove("hidden");
-                } else {
-                    card.classList.add("hidden");
-                }
+                card.style.display = shouldShow ? "flex" : "none";
             });
         });
     });
@@ -167,13 +157,13 @@ function initScrollEffects() {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("fade-in");
-                observer.unobserve(entry.target); // Animate only once
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
     const elementsToAnimate = document.querySelectorAll(
-        ".performance-card, .program-card, .tier-card, .section-header"
+        ".performance-card, .program-card, .tier-card, .section-header, .about-card"
     );
     elementsToAnimate.forEach((el) => observer.observe(el));
 }
@@ -189,7 +179,8 @@ function initInteractiveElements() {
         }
         if (e.target.matches(".enroll-btn")) {
             const card = e.target.closest(".program-card");
-            const title = card.querySelector(".program-title")?.textContent || "Program";
+            const title =
+                card.querySelector(".program-title")?.textContent || "Program";
             showEnrollmentModal(title);
         }
     });
@@ -201,15 +192,16 @@ function initMembershipTiers() {
     tierButtons.forEach((btn) => {
         btn.addEventListener("click", function () {
             const tierCard = this.closest(".tier-card");
-            const tierName = tierCard.querySelector(".tier-name")?.textContent || "Membership";
-            const tierPrice = tierCard.querySelector(".tier-price")?.textContent || "₹0";
+            const tierName =
+                tierCard.querySelector(".tier-name")?.textContent || "Membership";
+            const tierPrice =
+                tierCard.querySelector(".tier-price")?.textContent || "₹0";
             showMembershipModal(tierName, tierPrice);
         });
     });
 }
 
 // --- Helper & Utility Functions ---
-
 function showVideoModal(title) {
     alert(`Playing video for: ${title}`);
 }

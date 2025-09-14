@@ -295,7 +295,7 @@ h4 {
   position: relative;
   width: 24px;
   height: 2px;
-  background-color: rgb(175, 98, 35);
+  background-color: var(--color-text);
   transition: all 0.3s ease;
 }
 
@@ -306,7 +306,7 @@ h4 {
   left: 0;
   width: 24px;
   height: 2px;
-  background-color: rgb(167, 100, 45);
+  background-color: var(--color-text);
   transition: all 0.3s ease;
 }
 
@@ -468,6 +468,64 @@ h4 {
   opacity: 0;
   pointer-events: none;
 }
+
+/* ======== NEW ABOUT US STYLES START ======== */
+.about-section {
+  background-color: var(--color-surface);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-32);
+}
+
+.about-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.about-card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-20);
+  background-color: rgba(var(--color-saffron-rgb), 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--color-saffron);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.about-card:hover .about-card-icon {
+  background-color: var(--color-saffron);
+  color: var(--color-white);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.about-card-title {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-12);
+}
+
+.about-card-description {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+/* ======== NEW ABOUT US STYLES END ======== */
 
 /* Performance Filters */
 .performance-filters {
@@ -769,7 +827,8 @@ h4 {
 /* Tablet View */
 @media (max-width: 1024px) {
   .performances-grid,
-  .tiers-grid {
+  .tiers-grid,
+  .about-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .programs-grid {
@@ -827,7 +886,8 @@ h4 {
   .performances-grid,
   .programs-grid,
   .tiers-grid,
-  .footer-grid {
+  .footer-grid,
+  .about-grid {
     grid-template-columns: 1fr;
   }
   .tier-card.featured {
