@@ -339,6 +339,7 @@ h4 {
   text-align: center;
   overflow: hidden;
   padding: 0;
+  /* opacity: 0.8; */
 }
 
 .video-background {
@@ -362,12 +363,18 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to top,
     rgba(var(--color-peacock-rgb), 0.7) 0%,
     rgba(var(--color-peacock-rgb), 0.1) 50%,
     transparent 100%
+  ); */
+  background: linear-gradient(
+    45deg,
+    rgba(26, 26, 26, 0.7),
+    rgba(10, 15, 28, 0.9)
   );
+  /* opacity: 0.8; */
 }
 
 .hero-content {
