@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initScrollEffects();
     initInteractiveElements();
     initMembershipTiers();
+    initDetailsToggle(); // <-- ADDED THIS
 });
 
 // 1. Navigation System
@@ -197,6 +198,29 @@ function initMembershipTiers() {
             const tierPrice =
                 tierCard.querySelector(".tier-price")?.textContent || "₹0";
             showMembershipModal(tierName, tierPrice);
+        });
+    });
+}
+
+// ======== NEW FUNCTION FOR CARD COLLAPSE ========
+function initDetailsToggle() {
+    const toggleButtons = document.querySelectorAll('.details-toggle-btn');
+
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.performance-card');
+            const details = card.querySelector('.performance-details');
+            const buttonText = button.querySelector('span');
+
+            card.classList.toggle('expanded');
+
+            if (card.classList.contains('expanded')) {
+                details.style.maxHeight = details.scrollHeight + 'px';
+                buttonText.textContent = 'Read Less';
+            } else {
+                details.style.maxHeight = null;
+                buttonText.textContent = 'Read More';
+            }
         });
     });
 }

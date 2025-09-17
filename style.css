@@ -339,7 +339,6 @@ h4 {
   text-align: center;
   overflow: hidden;
   padding: 0;
-  /* opacity: 0.8; */
 }
 
 .video-background {
@@ -363,18 +362,11 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: linear-gradient(
-    to top,
-    rgba(var(--color-peacock-rgb), 0.7) 0%,
-    rgba(var(--color-peacock-rgb), 0.1) 50%,
-    transparent 100%
-  ); */
   background: linear-gradient(
     45deg,
     rgba(26, 26, 26, 0.7),
     rgba(10, 15, 28, 0.9)
   );
-  /* opacity: 0.8; */
 }
 
 .hero-content {
@@ -476,7 +468,7 @@ h4 {
   pointer-events: none;
 }
 
-/* ======== NEW ABOUT US STYLES START ======== */
+/* About Us Section */
 .about-section {
   background-color: var(--color-surface);
 }
@@ -532,7 +524,6 @@ h4 {
   color: var(--color-text-secondary);
   line-height: var(--line-height-normal);
 }
-/* ======== NEW ABOUT US STYLES END ======== */
 
 /* Performance Filters */
 .performance-filters {
@@ -551,6 +542,7 @@ h4 {
   cursor: pointer;
   transition: all 0.3s;
   font-weight: 500;
+  color: var(--color-text-secondary);
 }
 
 .filter-btn.active,
@@ -560,21 +552,15 @@ h4 {
   border-color: var(--color-saffron);
 }
 
-/* Cards */
-.performances-grid,
-.programs-grid,
-.tiers-grid {
+/* Performance Cards */
+.performances-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-32);
-}
-.programs-grid {
-  grid-template-columns: repeat(4, 1fr);
+  align-items: start; /* THIS IS THE FIX: Prevents items from stretching */
 }
 
-.performance-card,
-.program-card,
-.tier-card {
+.performance-card {
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -582,11 +568,25 @@ h4 {
   transition: all var(--duration-normal) var(--ease-standard);
   display: flex;
   flex-direction: column;
+  border-top: 4px solid transparent; /* Base for color coding */
 }
 
-.performance-card:hover,
-.program-card:hover,
-.tier-card:hover {
+/* ======== CATEGORY COLOR STYLES START ======== */
+.performance-card[data-category="festival"] {
+  border-top-color: var(--color-saffron);
+}
+.performance-card[data-category="dance-music"] {
+  border-top-color: var(--color-marigold);
+}
+.performance-card[data-category="workshop"] {
+  border-top-color: var(--color-saffron);
+}
+.performance-card[data-category="literary"] {
+  border-top-color: var(--color-peacock);
+}
+/* ======== CATEGORY COLOR STYLES END ======== */
+
+.performance-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
 }
@@ -596,62 +596,78 @@ h4 {
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   overflow: hidden;
 }
-.performance-thumbnail img,
-.program-img {
+
+.performance-thumbnail img {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform var(--duration-normal) var(--ease-standard);
 }
+
 .performance-card:hover .performance-thumbnail img {
   transform: scale(1.05);
 }
 
-.performance-duration {
-  position: absolute;
-  bottom: var(--space-8);
-  right: var(--space-8);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 4px;
-}
-
-.performance-info,
-.program-content {
+.performance-info {
   padding: var(--space-20);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.performance-title,
-.program-title {
+.performance-title {
   font-size: 1.25rem;
   margin-bottom: var(--space-8);
   color: var(--color-text);
 }
 
-.performance-artist,
-.performance-description,
-.program-description {
+.performance-artist {
   font-size: 0.9rem;
   color: var(--color-text-secondary);
   margin-bottom: var(--space-12);
-  flex-grow: 1;
 }
-.performance-stats {
-  margin-top: auto;
-  font-size: 0.8rem;
+
+.performance-description {
+  font-size: 0.9rem;
   color: var(--color-text-secondary);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-bottom: var(--space-12);
+  /* removed flex-grow from here to prevent stretching */
 }
-.rating {
-  color: var(--color-marigold);
+
+/* Card Collapse Styles */
+.performance-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--ease-standard);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+.performance-details p {
+  margin-bottom: var(--space-8);
+}
+
+.details-toggle-btn {
+  margin-top: auto;
+  padding-top: var(--space-12);
+  background: none;
+  border: none;
+  color: var(--color-saffron);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  width: fit-content;
+  font-size: 14px;
+}
+.details-toggle-btn i {
+  margin-left: var(--space-8);
+  transition: transform 0.3s var(--ease-standard);
+}
+.performance-card.expanded .details-toggle-btn i {
+  transform: rotate(180deg);
 }
 
 .play-overlay {
@@ -693,23 +709,30 @@ h4 {
   box-shadow: var(--shadow-glow-primary);
 }
 
-/* Academy Section */
-.program-card {
-  position: relative;
-}
-.program-img {
-  position: relative;
-  padding-bottom: 56.25%;
-}
-.program-card .enroll-btn {
-  margin-top: auto;
+/* Membership Tiers */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-32);
 }
 
-/* Membership Tiers */
 .tier-card {
   text-align: center;
   padding: var(--space-24);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--duration-normal) var(--ease-standard);
+  display: flex;
+  flex-direction: column;
 }
+
+.tier-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
 .tier-card.featured {
   background: var(--color-peacock);
   color: var(--color-white);
@@ -838,9 +861,6 @@ h4 {
   .about-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .programs-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -891,7 +911,6 @@ h4 {
     font-size: 2rem;
   }
   .performances-grid,
-  .programs-grid,
   .tiers-grid,
   .footer-grid,
   .about-grid {
