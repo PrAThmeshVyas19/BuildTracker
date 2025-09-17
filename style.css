@@ -71,8 +71,39 @@
   padding: 0;
 }
 
+/* 1. Add this to create the parallax scrolling background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("./images/slim_waves_bg.png");
+  background-size: 300% 100%;
+  background-repeat: repeat-x;
+  opacity: 0.12;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* 2. Keyframe animation for continuous wave movement */
+@keyframes sineWaveMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body::before {
+  animation: sineWaveMove 30s linear infinite;
 }
 
 body {
@@ -138,6 +169,8 @@ h4 {
 }
 
 .section-subtitle {
+  padding: 20px;
+  /* font-weight: bold; */
   font-size: 1.1rem;
   color: var(--color-text-secondary);
 }
@@ -214,17 +247,20 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-16) var(--space-20);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-24);
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
   gap: var(--space-12);
+  padding: 15px;
 }
 
 .logo-img {
-  height: 50px;
+  height: 40px;
 }
 
 .logo-text {
@@ -246,8 +282,10 @@ h4 {
 .nav-menu {
   display: flex;
   list-style: none;
-  align-items: center;
+  margin: 0;
+  padding: 0;
   gap: var(--space-32);
+  align-items: center;
 }
 
 .nav-link {
@@ -255,7 +293,7 @@ h4 {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  padding: var(--space-8) 0;
+  padding: var(--space-8) var(--space-16);
   transition: color 0.2s;
   position: relative;
 }
@@ -709,6 +747,12 @@ h4 {
   box-shadow: var(--shadow-glow-primary);
 }
 
+/* More Events CTA */
+.more-events-cta {
+  text-align: center;
+  margin-top: var(--space-60);
+}
+
 /* Membership Tiers */
 .tiers-grid {
   display: grid;
@@ -831,6 +875,163 @@ h4 {
 .footer-bottom p {
   font-size: 14px;
   color: #aaa;
+}
+
+/* Add this to your style.css */
+
+/* Team Members */
+/* TEAM SECTION */
+.team-section {
+  padding: 60px 0;
+  background-color: var(--bg-light);
+}
+
+.team-section .section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* SMALL CARDS GRID */
+.team-grid-small {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* SMALL CARD */
+.team-card-small {
+  text-align: center;
+  width: 100%;
+  max-width: 160px;
+  padding: 15px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card-small:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* AVATAR */
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* NAME & ROLE */
+.team-name-small {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 6px 0 4px;
+}
+
+.team-role-small {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+/* SECTION */
+.inspiration-section {
+  padding: 80px 0;
+  background-color: var(--bg-light);
+}
+
+.inspiration-section .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* WRAPPER */
+.inspiration-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.inspiration-card {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color); /* thicker crisp border */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inspiration-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* PHOTO */
+.inspiration-photo {
+  flex: 1;
+  max-width: 360px; /* fixed image width */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inspiration-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.inspiration-content {
+  flex: 2;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.inspiration-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.inspiration-role {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+}
+
+.inspiration-bio {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-color);
 }
 
 /* Animations & Transitions */

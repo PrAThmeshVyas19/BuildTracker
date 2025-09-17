@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initInteractiveElements();
     initMembershipTiers();
     initDetailsToggle(); // <-- ADDED THIS
+    initSineWaveParallax();
 });
 
 // 1. Navigation System
@@ -96,28 +97,28 @@ function initNavigation() {
 
 // 2. Video Player Controls
 function initVideoPlayer() {
-    const playPauseBtn = document.querySelector(".play-pause-btn");
-    const muteBtn = document.querySelector(".mute-btn");
-    const video = document.querySelector(".hero-video-element");
+    // const playPauseBtn = document.querySelector(".play-pause-btn");
+    // const muteBtn = document.querySelector(".mute-btn");
+    // const video = document.querySelector(".hero-video-element");
 
-    if (!video) return;
+    // if (!video) return;
 
-    playPauseBtn.setAttribute("data-playing", !video.paused);
-    muteBtn.setAttribute("data-muted", video.muted);
+    // playPauseBtn.setAttribute("data-playing", !video.paused);
+    // muteBtn.setAttribute("data-muted", video.muted);
 
-    playPauseBtn.addEventListener("click", function () {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
-        }
-        this.setAttribute("data-playing", !video.paused);
-    });
+    // playPauseBtn.addEventListener("click", function () {
+    //     if (video.paused) {
+    //         video.play();
+    //     } else {
+    //         video.pause();
+    //     }
+    //     this.setAttribute("data-playing", !video.paused);
+    // });
 
-    muteBtn.addEventListener("click", function () {
-        video.muted = !video.muted;
-        this.setAttribute("data-muted", video.muted);
-    });
+    // muteBtn.addEventListener("click", function () {
+    //     video.muted = !video.muted;
+    //     this.setAttribute("data-muted", video.muted);
+    // });
 }
 
 // 3. Hero Background Image Fallback
@@ -223,6 +224,22 @@ function initDetailsToggle() {
             }
         });
     });
+}
+
+// Add this function to your existing app.js file
+function initSineWaveParallax() {
+    const sineWaveBackground = document.querySelector('body::before') || document.body;
+
+    function updateWavePosition() {
+        const scrollY = window.pageYOffset;
+        const scrollPercent = scrollY / (document.body.scrollHeight - window.innerHeight);
+        const backgroundPosition = scrollPercent * 200; // Adjust speed here
+
+        document.body.style.setProperty('--wave-position', `${backgroundPosition}%`);
+    }
+
+    // Smooth scroll listener
+    window.addEventListener('scroll', debounce(updateWavePosition, 10));
 }
 
 // --- Helper & Utility Functions ---
