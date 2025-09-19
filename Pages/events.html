@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Permissions-Policy" content="unload=()" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>All Events - Lokmanya Cultural Foundation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav-overlay">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img
+            src="/images/logo.png"
+            alt="Lokmanya Cultural Foundation Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <div class="logo-hindi">लोकमान्य कल्चरल फाउंडेशन</div>
+            <div class="logo-english">Lokmanya Cultural Foundation</div>
+          </div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="events.html" class="nav-link active">Events</a></li>
+          <li>
+            <a href="../index.html#contact" class="nav-link">Contact Us</a>
+          </li>
+          <li><a href="../index.html#support" class="nav-link">Support</a></li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </nav>
+
+    <section
+      id="performances"
+      class="performances-section"
+      style="padding-top: 150px"
+    >
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Events</h2>
+          <p class="section-subtitle">
+            Explore our diverse range of past, present, and upcoming cultural
+            events.
+          </p>
+          <div class="performance-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="festival">Festival</button>
+            <button class="filter-btn" data-filter="dance-music">
+              Dance & Music
+            </button>
+            <button class="filter-btn" data-filter="workshop">Workshop</button>
+            <button class="filter-btn" data-filter="literary">Literary</button>
+          </div>
+        </div>
+        <div class="performances-grid">
+          <div class="performance-card" data-category="festival">
+            <div class="performance-thumbnail">
+              <img src="/images/Event1_Shrilanka/1.jpg" alt="Poetry Event" />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">The Poetry Rain of Bharat</h3>
+              <p class="performance-artist">
+                A cultural exchange with Sri Lankan scholars
+              </p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> Concluded on 21st November 2024</p>
+                <p><strong>Venue:</strong> Samavsaran Auditorium, Pune</p>
+                <p>
+                  This event brought Sri Lankan scholars and poets to India for
+                  a tour across five cities, celebrating cultural harmony
+                  through poetry. The grand finale in Pune featured a Kathak
+                  performance and a Sitar recital.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="dance-music">
+            <div class="performance-thumbnail">
+              <img
+                src="/images/Event2/KAU_1944.JPG"
+                alt="Classical Dance Festival"
+              />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Aatmabodhi - The Soul Awakens</h3>
+              <p class="performance-artist">
+                Annual solo classical dance festival
+              </p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 29th November 2024</p>
+                <p><strong>Venue:</strong> Pune</p>
+                <p>
+                  Curated by Smt. Abha Auti, this edition commemorated the birth
+                  centenary of Guru Rohini Bhate. It featured renowned classical
+                  solo dancers from India and abroad, celebrating the depth and
+                  devotion of solo artistry.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="literary">
+            <div class="performance-thumbnail">
+              <img
+                src="/images/Essay_Writing/Gemini_Generated_Image_dbtnwydbtnwydbtn.png"
+                alt="Essay Writing"
+              />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">
+                Maharashtra Times Essay Writing Competition
+              </h3>
+              <p class="performance-artist">
+                Inspiring the youth of Maharashtra
+              </p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 20th April 2025</p>
+                <p>
+                  This competition, organized with Maharashtra Times, aimed to
+                  inspire young minds to share their vision for a progressive
+                  future. It was open to students from age 9 up to graduation to
+                  ensure fairness and inclusivity.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="festival">
+            <div class="performance-thumbnail">
+              <img
+                src="/images/Maay_Marathi/shivaji-maharaj-jayanti-f.webp"
+                alt="Art Sangam"
+              />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Maay Marathi Kala Sangam</h3>
+              <p class="performance-artist">A three-day cultural festival</p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 24th-26th February 2025</p>
+                <p><strong>Venue:</strong> Times of India building</p>
+                <p>
+                  This festival celebrated Shivaji Maharaj Jayanti and Marathi
+                  Bhasha Divas, attracting over 35,000 visitors. It featured
+                  live art, weapon exhibitions, and a showcase of sculpture,
+                  music, and poetry.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="festival">
+            <div class="performance-thumbnail">
+              <img
+                src="/images/Yog_Yogi/KAU_7273.JPG"
+                alt="Yog Yogi Festival"
+              />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Yog Yogi Festival</h3>
+              <p class="performance-artist">A Mahashivratri celebration</p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 25th February 2025</p>
+                <p>
+                  A tribute to Mahashivratri intertwining spirituality with
+                  performing arts. The evening featured a graceful Kathak
+                  presentation 'Bhole Shiva' and an energetic Pakhwaj recital
+                  'Shivoham' accompanied by Kathak.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="dance-music">
+            <div class="performance-thumbnail">
+              <img src="/images/Event4/KAU_0535.JPG" alt="Violin Orchestra" />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Rujwaat</h3>
+              <p class="performance-artist">
+                Gudi Padwa Celebration with 'Swarswapna'
+              </p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 30th March 2025</p>
+                <p><strong>Venue:</strong> Samavsaran Auditorium, BORI</p>
+                <p>
+                  A celebration for the Marathi New Year featuring 'Swarswapna',
+                  a violin orchestra of young artists aged 8 to 18, conceived by
+                  Smt. Swapna Datar. A prize for the best ethnic attire added to
+                  the festive charm.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="dance-music">
+            <div class="performance-thumbnail">
+              <img src="/images/Event1_Shrilanka/1.jpg" alt="Musical Tribute" />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Akshay Gani Vasant Gani</h3>
+              <p class="performance-artist">
+                A tribute to timeless Marathi melodies
+              </p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 30th April 2025</p>
+                <p><strong>Venue:</strong> Samavsaran Auditorium, BORI</p>
+                <p>
+                  A soulful journey through evergreen songs, celebrating the
+                  musical legacy of eminent artists named Vasant: Vasant Desai,
+                  Vasant Pawar, and Vasant Prabu. The event was filled with
+                  nostalgia and the charm of legendary Marathi music.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="literary">
+            <div class="performance-thumbnail">
+              <img
+                src="../images/Event2/KAU_4055.JPG"
+                alt="Documentary Screening"
+              />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">When Dance Comes Alive</h3>
+              <p class="performance-artist">
+                Documentary film series on dance gurus
+              </p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 4th & 5th July 2025</p>
+                <p><strong>Venue:</strong> Firodia Auditorium, BORI</p>
+                <p>
+                  A two-day event screening documentaries on eminent dance
+                  gurus. Day one featured 'Kathak - Adi - Kathak' on Guru Smt.
+                  Roshan Datye, and day two showcased 'Vyomgami' on Bharatnatyam
+                  Guru Dr. Sucheta Bhide - Chapekar.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="literary">
+            <div class="performance-thumbnail">
+              <img
+                src="/images/Achyut_Godbole/Achyut-godbole-Logo.jpg"
+                alt="Felicitation Ceremony"
+              />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Amrutsiddhi Sohala</h3>
+              <p class="performance-artist">
+                Celebrating author Achyut Godbole
+              </p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 15th August 2025</p>
+                <p><strong>Venue:</strong> Pune</p>
+                <p>
+                  An event to celebrate the 75th birthday of renowned author
+                  Achyut Godbole. The celebration featured insightful speeches
+                  from chief guests Padma Vibhushan Dr. Anil Kakodkar and Dr.
+                  Anand Nadkarni, along with a special book release.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="literary">
+            <div class="performance-thumbnail">
+              <img src="/images/6.jpg" alt="Birth Centenary Event" />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Sathi Kishor Pawar Pratishthan</h3>
+              <p class="performance-artist">
+                Birth centenary of a freedom fighter
+              </p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 16th August 2025</p>
+                <p>
+                  An event marking the birth centenary of freedom fighter Sathi
+                  Kishor Pawar, with Hon. Sharadchandra Pawar as Chief Guest.
+                  Eminent speakers discussed the Sugar Industry and Labor
+                  Movement, complemented by soulful Kirtan and musical
+                  presentations.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="workshop">
+            <div class="performance-thumbnail">
+              <img
+                src="/images/Event5/image (28).png"
+                alt="Ganapati Idol Workshop"
+              />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Ganapati Idol Making</h3>
+              <p class="performance-artist">Workshop with actor Raqesh Bapat</p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 24th August 2025</p>
+                <p><strong>Venue:</strong> Karve Shikshan Hall</p>
+                <p>
+                  A unique, hands-on workshop where over 70 participants under
+                  14 years learned to make their own eco-friendly Ganapati idols
+                  under the guidance of actor and artist Raqesh Bapat.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="performance-card" data-category="festival">
+            <div class="performance-thumbnail">
+              <img
+                src="/images/Kalavanta/1.jpg"
+                alt="Dhol Pathak Performance"
+              />
+            </div>
+            <div class="performance-info">
+              <h3 class="performance-title">Kalawant Pathak Waadan</h3>
+              <p class="performance-artist">Ganesh Festival Celebration</p>
+              <div class="performance-details">
+                <p><strong>Date:</strong> 4th September 2025</p>
+                <p>
+                  <strong>Venue:</strong> Bhandarkar Oriental Research Institute
+                </p>
+                <p>
+                  A magnificent Ganesh Festival celebration featuring a vibrant
+                  performance by the 'Kalawant Dhol Pathak'. The event included
+                  various artists, creating an energetic atmosphere filled with
+                  music, rhythm, and festive spirit.
+                </p>
+              </div>
+              <button class="details-toggle-btn">
+                <span>Read More</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="support-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Support Our Mission</h2>
+          <p class="section-subtitle">
+            Your support helps us preserve our cultural heritage for generations
+            to come.
+          </p>
+        </div>
+        <div class="tiers-grid">
+          <div class="tier-card">
+            <div class="tier-header">
+              <h3 class="tier-name">Patron</h3>
+              <span class="tier-price">₹1,000/month</span>
+            </div>
+            <p class="tier-description">
+              Enjoy exclusive online events, early access, and more.
+            </p>
+            <ul class="tier-features">
+              <li>Access to all live streams</li>
+              <li>Monthly newsletter</li>
+              <li>Exclusive content</li>
+            </ul>
+            <button class="tier-btn btn btn-secondary">Choose Plan</button>
+          </div>
+          <div class="tier-card featured">
+            <div class="tier-header">
+              <h3 class="tier-name">Benefactor</h3>
+              <span class="tier-price">₹5,000/month</span>
+            </div>
+            <p class="tier-description">
+              All Patron benefits, plus backstage passes and workshops.
+            </p>
+            <ul class="tier-features">
+              <li>All Patron benefits</li>
+              <li>Workshop invitations</li>
+              <li>Backstage access to select events</li>
+            </ul>
+            <button class="tier-btn btn btn-primary">Choose Plan</button>
+          </div>
+          <div class="tier-card">
+            <div class="tier-header">
+              <h3 class="tier-name">Legacy</h3>
+              <span class="tier-price">₹10,000/month</span>
+            </div>
+            <p class="tier-description">
+              All Benefactor benefits, plus private events and recognition.
+            </p>
+            <ul class="tier-features">
+              <li>All Benefactor benefits</li>
+              <li>Invitation to annual gala</li>
+              <li>Name recognition on website</li>
+            </ul>
+            <button class="tier-btn btn btn-secondary">Choose Plan</button>
+          </div>
+        </div>
+        <div class="cta-support">
+          <a href="#" class="btn btn-tertiary">Make a One-Time Donation</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@lokmanya.org">info@lokmanya.org</a>
+            </p>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+918888888888">+91 8888 888888</a>
+            </p>
+            <div class="social-links">
+              <a href="#" target="_blank" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" target="_blank" aria-label="Twitter"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="#" target="_blank" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="events.html">Performances</a></li>
+              <li><a href="index.html#academy">Academy</a></li>
+              <li><a href="index.html#support">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Academy</h4>
+            <ul>
+              <li><a href="index.html#academy">Master Classes</a></li>
+              <li><a href="index.html#academy">Digital Gurukul</a></li>
+              <li><a href="index.html#academy">Youth Programs</a></li>
+              <li><a href="index.html#academy">Certification</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="index.html#support">Membership</a></li>
+              <li><a href="index.html#support">Donate</a></li>
+              <li><a href="index.html#support">Contact</a></li>
+              <li><a href="index.html#support">Help Center</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Lokmanya Cultural Foundation. All rights reserved. |
+            Established 2006
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../app.js"></script>
+  </body>
+</html>

@@ -52,25 +52,26 @@ function initNavigation() {
     // Smooth scrolling for navigation links
     navLinks.forEach((link) => {
         link.addEventListener("click", function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute("href");
-            const targetSection = document.querySelector(targetId);
 
-            if (targetSection) {
-                // Close mobile menu on link click
-                navMenu.classList.remove("active");
-                mobileMenuBtn.classList.remove("active");
-                document.body.style.overflow = "auto";
+            // ONLY prevent default for on-page anchor links
+            if (targetId && targetId.startsWith("#")) {
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
 
-                // Update active link style
-                navLinks.forEach((l) => l.classList.remove("active"));
-                this.classList.add("active");
+                if (targetSection) {
+                    // Close mobile menu on link click
+                    navMenu.classList.remove("active");
+                    mobileMenuBtn.classList.remove("active");
+                    document.body.style.overflow = "auto";
 
-                // Scroll to section
-                const navHeight = nav.offsetHeight;
-                const targetPosition = targetSection.offsetTop - navHeight;
-                window.scrollTo({ top: targetPosition, behavior: "smooth" });
+                    // Scroll to section
+                    const navHeight = nav.offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navHeight;
+                    window.scrollTo({ top: targetPosition, behavior: "smooth" });
+                }
             }
+            // For external links like "Pages/about.html", do nothing and let the browser navigate normally.
         });
     });
 
@@ -227,20 +228,20 @@ function initDetailsToggle() {
 }
 
 // Add this function to your existing app.js file
-function initSineWaveParallax() {
-    const sineWaveBackground = document.querySelector('body::before') || document.body;
+// function initSineWaveParallax() {
+//     const sineWaveBackground = document.querySelector('body::before') || document.body;
 
-    function updateWavePosition() {
-        const scrollY = window.pageYOffset;
-        const scrollPercent = scrollY / (document.body.scrollHeight - window.innerHeight);
-        const backgroundPosition = scrollPercent * 200; // Adjust speed here
+//     function updateWavePosition() {
+//         const scrollY = window.pageYOffset;
+//         const scrollPercent = scrollY / (document.body.scrollHeight - window.innerHeight);
+//         const backgroundPosition = scrollPercent * 200; // Adjust speed here
 
-        document.body.style.setProperty('--wave-position', `${backgroundPosition}%`);
-    }
+//         document.body.style.setProperty('--wave-position', `${backgroundPosition}%`);
+//     }
 
-    // Smooth scroll listener
-    window.addEventListener('scroll', debounce(updateWavePosition, 10));
-}
+//     // Smooth scroll listener
+//     window.addEventListener('scroll', debounce(updateWavePosition, 10));
+// }
 
 // --- Helper & Utility Functions ---
 function showVideoModal(title) {
