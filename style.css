@@ -1074,97 +1074,155 @@ h4 {
 
 /* SECTION */
 
-.inspiration-section {
-  padding: 80px 0;
-  background-color: var(--bg-light);
+/* SECTION WRAPPER */
+.our-inspiration {
+  background: url("images/Landscape 2.jpg") center/cover no-repeat;
+  padding: 6rem 1.5rem; /* Increased padding for more breathing room */
+  font-family: "Noto Sans Devanagari", sans-serif;
+  color: #1d3c3e;
 }
 
-.inspiration-section .section-header {
+/* CONTAINER FOR CENTERING CONTENT */
+.our-inspiration .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* SECTION TITLE STYLING */
+.our-inspiration .section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.75rem;
   text-align: center;
-  margin-bottom: 40px;
+  color: #044c4c;
+  margin-bottom: 4rem; /* Increased space between title and card */
+  position: relative;
 }
 
-/* WRAPPER */
+.our-inspiration .section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #a9c5c5;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
 
-.inspiration-wrapper {
-  display: flex;
+/* GRID LAYOUT - MODIFIED TO CENTER A SINGLE WIDE CARD */
+.inspiration-grid {
+  display: flex; /* Using flexbox to easily center the card */
   justify-content: center;
+  align-items: center;
 }
 
-/* CARD */
-
+/* INDIVIDUAL CARD STYLING - UPDATED FOR A WIDER, MORE AESTHETIC LOOK */
 .inspiration-card {
   display: flex;
-  flex-direction: row;
-  max-width: 1200px;
-  width: 100%;
-  background-color: var(--card-bg);
-  border: 2px solid var(--border-color);
-  /* thicker crisp border */
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96); /* Slightly more opaque */
+  border-radius: 20px; /* Softer radius */
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  /* subtle shadow */
+  /* Softer, more diffused shadow for a premium feel */
+  box-shadow: 0 15px 40px -15px rgba(var(--color-peacock-rgb), 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(var(--color-peacock-rgb), 0.1); /* Subtle border for definition */
+  width: 100%;
+  max-width: 880px; /* Significantly wider card */
 }
 
 .inspiration-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px -15px rgba(var(--color-peacock-rgb), 0.3);
 }
 
-/* PHOTO */
-
-.inspiration-photo {
-  flex: 1;
-  max-width: 360px;
-  /* fixed image width */
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: var(--bg-light);
+/* PHOTO CONTAINER WITHIN THE CARD - LARGER AND MORE SPACIOUS */
+.inspiration-card .photo {
+  flex: 0 0 280px; /* Increased photo container width */
+  padding: 1.5rem; /* Increased padding around the photo */
+  background-color: rgba(212, 227, 227, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.inspiration-photo img {
+.inspiration-card .photo img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
   object-fit: cover;
+  border-radius: 12px; /* Softer radius for the image */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* CONTENT */
-
-.inspiration-content {
-  flex: 2;
-  padding: 40px 30px;
+/* TEXT CONTENT STYLING - REFINED TYPOGRAPHY & SPACING */
+.inspiration-card .content {
+  padding: 3rem 3.5rem; /* Increased internal padding for better balance */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 20px;
 }
 
-.inspiration-name {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  color: var(--primary-color);
-  margin-bottom: 8px;
+.inspiration-card .name {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem; /* Larger font size for the name */
+  margin: 0 0 1rem 0;
+  color: var(--color-peacock); /* Using a theme color for emphasis */
+  position: relative;
+  padding-bottom: 1rem;
 }
 
-.inspiration-role {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--secondary-color);
-  margin-bottom: 16px;
+/* Decorative line added below the name */
+.inspiration-card .name::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
 }
 
-.inspiration-bio {
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--text-color);
+.inspiration-card .bio {
+  margin-top: 1.5rem; /* Increased space between line and bio */
+  line-height: 1.7; /* Improved line spacing for readability */
+  color: #395e5f;
+  font-size: 1.05rem;
+}
+
+/* MOBILE ADAPTATIONS - ENSURING THE NEW DESIGN IS RESPONSIVE */
+@media (max-width: 960px) {
+  .inspiration-card {
+    flex-direction: column; /* Stack vertically on tablets and below */
+    max-width: 480px;
+  }
+  .inspiration-card .photo {
+    flex-basis: auto;
+    width: 100%;
+    max-height: 400px;
+  }
+  .inspiration-card .content {
+    padding: 2rem 2.5rem;
+  }
+  .inspiration-card .name {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .our-inspiration {
+    padding: 3rem 1rem;
+  }
+  .inspiration-card {
+    max-width: 100%; /* Allow card to fill the space */
+  }
+  .inspiration-card .content {
+    padding: 2rem 1.5rem;
+  }
+  .inspiration-card .name {
+    font-size: 2rem;
+  }
+  .inspiration-card .bio {
+    font-size: 1rem;
+  }
 }
 
 /* Animations & Transitions */

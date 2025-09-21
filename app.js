@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initInteractiveElements();
     initMembershipTiers();
     initDetailsToggle(); // <-- ADDED THIS
-    initSineWaveParallax();
+    // initSineWaveParallax();
 });
 
 // 1. Navigation System
