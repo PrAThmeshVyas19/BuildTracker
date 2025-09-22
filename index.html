@@ -11,6 +11,7 @@
   </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Pages/artists.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
@@ -30,8 +31,9 @@
         <li><a href="index.html" class="nav-link active">Home</a></li>
         <li><a href="Pages/about.html" class="nav-link">About Us</a></li>
         <li><a href="Pages/events.html" class="nav-link">Events</a></li>
+        <li><a href="Pages/artists.html" class="nav-link">Artists</a></li>
         <li><a href="Pages/contact.html" class="nav-link">Contact Us</a></li>
-        <!-- <li><a href="#support" class="nav-link">Support</a></li> -->
+
       </ul>
       <button class="mobile-menu-btn" aria-label="Toggle menu">
         <span class="hamburger"></span>
@@ -82,7 +84,7 @@
   <section id="about" class="about-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">About Our Foundation</h2>
+        <h2 class="section-title" style="padding-top: 50px;">About Our Foundation</h2>
         <p class="section-subtitle">
           Lokmanya Cultural Foundation was born from a vision to create a
           vibrant platform where India's rich cultural heritage could thrive
@@ -458,7 +460,7 @@
   </section>
 
   <div class="view-more-events-cta">
-    <a href="Pages/events.html" class="btn btn-primary">View All Events</a>
+    <a href="events.html" class="btn btn-primary">View All Events</a>
   </div>
 
   <!-- <section id="support" class="support-section">
@@ -522,6 +524,78 @@
     </div>
   </section> -->
 
+  <!-- Artists Section -->
+  <section class="artists-section1">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Our Artists</h1>
+        <p class="section-subtitle">
+          Celebrating the talented individuals who bring our cultural vision to life. Click on any artist to
+          explore their gallery of performances and artworks.
+        </p>
+      </div>
+
+      <div class="artists-grid">
+        <!-- Artist 1: Abha Auti -->
+        <div class="artist-card" onclick="openGallery('abha-auti')">
+          <img src="../images/Artists/Abha_Auti/1.JPG" alt="Abha Auti" class="artist-image">
+          <div class="artist-info">
+            <h3 class="artist-name">Smt. Abha Auti</h3>
+            <p class="artist-specialty">Classical Kathak Dancer</p>
+            <!-- <p class="artist-description">
+                            A renowned Kathak artist with over 15 years of experience, specializing in traditional and
+                            contemporary fusion performances.
+                        </p> -->
+            <button class="view-gallery-btn">View Gallery</button>
+          </div>
+        </div>
+
+        <!-- Artist 2: Rajesh Kumar -->
+        <div class="artist-card" onclick="openGallery('dheerendra-tiwari')">
+          <img src="../images/Artists/Dheerendra_Tiwari/1.JPG" alt="Dheerendra Tiwari" class="artist-image">
+          <div class="artist-info">
+            <h3 class="artist-name">Shree Dheerendra Tiwari</h3>
+            <p class="artist-specialty">Classical Kathak Dancer</p>
+            <!-- <p class="artist-description">
+                            Master tabla player who has performed alongside legendary musicians across India and
+                            internationally.
+                        </p> -->
+            <button class="view-gallery-btn">View Gallery</button>
+          </div>
+        </div>
+
+        <!-- Artist 3: Meera Patel -->
+        <div class="artist-card" onclick="openGallery('vaibhav-arekar')">
+          <img src="../images/Artists/Vaibhav_Arekar/1.JPG" alt="Vaibhav Arekar" class="artist-image">
+          <div class="artist-info">
+            <h3 class="artist-name">Shree Vaibhav Arekar</h3>
+            <p class="artist-specialty">Classical Kathak Dancer</p>
+            <!-- <p class="artist-description">
+                            Hindustani classical singer known for her soulful renditions of ragas and devotional music.
+                        </p> -->
+            <button class="view-gallery-btn">View Gallery</button>
+          </div>
+        </div>
+      </div>
+      <div class="view-more-events-cta" style="margin: 0;">
+        <a href="Pages/artists.html" class="btn btn-primary">View All Artists</a>
+      </div>
+  </section>
+
+  <!-- Gallery Modal -->
+  <div class="gallery-modal" id="gallery-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-modal" onclick="closeGallery()">&times;</button>
+        <h2 class="modal-title" id="modal-artist-name">Artist Name</h2>
+        <p class="modal-subtitle" id="modal-artist-specialty">Artist Specialty</p>
+      </div>
+      <div class="modal-gallery" id="modal-gallery">
+        <!-- Gallery images will be dynamically loaded here -->
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -544,28 +618,29 @@
         <div class="footer-section">
           <h4>Explore</h4>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#performances">Performances</a></li>
-            <li><a href="#academy">Academy</a></li>
-            <li><a href="#support">Support</a></li>
+            <li><a href="Pages/about.html">About Us</a></li>
+            <li><a href="Pages/events.html">Performances</a></li>
+            <li><a href="Pages/contact.html">Contact</a></li>
+            <li><a href="Pages/artists.html">Artists</a></li>
+            <!-- <li><a href="#support">Support</a></li> -->
           </ul>
         </div>
         <div class="footer-section">
-          <h4>Academy</h4>
+          <!-- <h4>Academy</h4>
           <ul>
             <li><a href="#academy">Master Classes</a></li>
             <li><a href="#academy">Digital Gurukul</a></li>
             <li><a href="#academy">Youth Programs</a></li>
             <li><a href="#academy">Certification</a></li>
-          </ul>
+          </ul> -->
         </div>
         <div class="footer-section">
-          <h4>Support</h4>
+          <!-- <h4>Support</h4> -->
           <ul>
-            <li><a href="#support">Membership</a></li>
-            <li><a href="#support">Donate</a></li>
-            <li><a href="#support">Contact</a></li>
-            <li><a href="#support">Help Center</a></li>
+            <!-- <li><a href="#support">Membership</a></li>
+            <li><a href="#support">Donate</a></li> -->
+            <!-- <li><a href="Pages/contact.html">Contact</a></li> -->
+            <!-- <li><a href="#support">Help Center</a></li> -->
           </ul>
         </div>
       </div>
@@ -578,6 +653,7 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="Pages/artists.js"></script>
 </body>
 
 </html>

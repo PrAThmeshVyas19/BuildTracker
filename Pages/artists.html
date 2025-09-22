@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Artists - Cultural Foundation</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="artists.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-overlay">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../images/logo.png" alt="Lokmanya Cultural Foundation Logo" class="logo-img" />
+                <div class="logo-text">
+                    <div class="logo-hindi">लोकमान्य कल्चरल फाउंडेशन</div>
+                    <div class="logo-english">Lokmanya Cultural Foundation</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="artists.html" class="nav-link active">Artists</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Artists Section -->
+    <section class="artists-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Our Artists</h1>
+                <p class="section-subtitle">
+                    Celebrating the talented individuals who bring our cultural vision to life. Click on any artist to
+                    explore their gallery of performances and artworks.
+                </p>
+            </div>
+
+            <div class="artists-grid">
+                <!-- Artist 1: Abha Auti -->
+                <div class="artist-card" onclick="openGallery('abha-auti')">
+                    <img src="../images/Artists/Abha_Auti/1.JPG" alt="Abha Auti" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Smt. Abha Auti</h3>
+                        <p class="artist-specialty">Classical Kathak Dancer</p>
+                        <!-- <p class="artist-description">
+                            A renowned Kathak artist with over 15 years of experience, specializing in traditional and
+                            contemporary fusion performances.
+                        </p> -->
+                        <button class="view-gallery-btn">View Gallery</button>
+                    </div>
+                </div>
+
+                <!-- Artist 2: Rajesh Kumar -->
+                <div class="artist-card" onclick="openGallery('dheerendra-tiwari')">
+                    <img src="../images/Artists/Dheerendra_Tiwari/1.JPG" alt="Dheerendra Tiwari" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Shree Dheerendra Tiwari</h3>
+                        <p class="artist-specialty">Classical Kathak Dancer</p>
+                        <!-- <p class="artist-description">
+                            Master tabla player who has performed alongside legendary musicians across India and
+                            internationally.
+                        </p> -->
+                        <button class="view-gallery-btn">View Gallery</button>
+                    </div>
+                </div>
+
+                <!-- Artist 3: Meera Patel -->
+                <div class="artist-card" onclick="openGallery('vaibhav-arekar')">
+                    <img src="../images/Artists/Vaibhav_Arekar/1.JPG" alt="Vaibhav Arekar" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Shree Vaibhav Arekar</h3>
+                        <p class="artist-specialty">Classical Kathak Dancer</p>
+                        <!-- <p class="artist-description">
+                            Hindustani classical singer known for her soulful renditions of ragas and devotional music.
+                        </p> -->
+                        <button class="view-gallery-btn">View Gallery</button>
+                    </div>
+                </div>
+
+                <!-- Artist 4: Arjun Singh -->
+                <div class="artist-card" onclick="openGallery('swapna-datar')">
+                    <img src="../images/Artists/Swapna_Datar/1.JPG" alt="Swapna Datar" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Smt. Swapna Datar</h3>
+                        <p class="artist-specialty">Violinist Maestra</p>
+                        <!-- <p class="artist-description">
+                            Young prodigy of sitar music, bringing fresh perspectives to classical Indian string
+                            instruments.
+                        </p> -->
+                        <button class="view-gallery-btn">View Gallery</button>
+                    </div>
+                </div>
+
+                <!-- Artist 5: Kavita Rao -->
+                <div class="artist-card" onclick="openGallery('rakesh-bapat')">
+                    <img src="../images/Artists/Rakesh_Bapat/1.jpg" alt="Rakesh Bapat" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Rakesh Bapat</h3>
+                        <p class="artist-specialty">Actor and Murtikar</p>
+                        <!-- <p class="artist-description">
+                            Accomplished Bharatanatyam performer who seamlessly blends traditional techniques with
+                            modern storytelling.
+                        </p> -->
+                        <button class="view-gallery-btn">View Gallery</button>
+                    </div>
+                </div>
+
+                <!-- Artist 6: Vikram Gupta -->
+                <div class="artist-card" onclick="openGallery('shruti-marathe')">
+                    <img src="../images/Artists/Shruti_Marathe/2.jpg" alt="Shruti Marathe" class="artist-image">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Shruti Marathe</h3>
+                        <p class="artist-specialty">Actor and Vadak</p>
+                        <!-- <p class="artist-description">
+                            Versatile flautist skilled in both Indian classical and folk music traditions from various
+                            regions.
+                        </p> -->
+                        <button class="view-gallery-btn">View Gallery</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="gallery-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeGallery()">&times;</button>
+                <h2 class="modal-title" id="modal-artist-name">Artist Name</h2>
+                <p class="modal-subtitle" id="modal-artist-specialty">Artist Specialty</p>
+            </div>
+            <div class="modal-gallery" id="modal-gallery">
+                <!-- Gallery images will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@lokmanya.org">info@lokmanya.org</a>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+918888888888">+91 8888 888888</a>
+                    </p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="events.html">Performances</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <!-- <li><a href="index.html#support">Support</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <!-- <h4>Academy</h4>
+          <ul>
+            <li><a href="index.html#academy">Master Classes</a></li>
+            <li><a href="index.html#academy">Digital Gurukul</a></li>
+            <li><a href="index.html#academy">Youth Programs</a></li>
+            <li><a href="index.html#academy">Certification</a></li>
+          </ul> -->
+                </div>
+                <div class="footer-section">
+                    <!-- <h4>Support</h4> -->
+                    <ul>
+                        <!-- <li><a href="index.html#support">Membership</a></li>
+            <li><a href="index.html#support">Donate</a></li> -->
+                        <!-- <li><a href="index.html#support">Contact</a></li> -->
+                        <!-- <li><a href="index.html#support">Help Center</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2025 Lokmanya Cultural Foundation. All rights reserved. |
+                    Established 2006
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="artists.js"></script>
+</body>
+
+</html>
